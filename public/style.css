@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header div a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header div a:hover {
+    color: #adb5bd;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+body > h1 {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+table {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #495057;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form input[type="text"] + br,
+form input[type="number"] + br,
+form input[type="date"] + br,
+form select + br,
+form textarea + br {
+    display: none;
+}
+
+form div label + select + label + select + br {
+    display: none;
+}
+
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
+}
+
+form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+body > h1 ~ div:not(form):not(:has(table)):not(:has(img)):not(:has(button)) {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    margin: 15px auto;
+    border-radius: 4px;
+    max-width: 600px;
+}
+
+body > p {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+}
+
+body > div > button {
+    margin: 10px auto;
+    display: block;
+}
+
+body > form input[type="text"],
+body > form button[type="submit"] {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+body > div > div[style*="display: flex"] {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body > div > div[style*="display: flex"] img {
+    margin-right: 20px;
+    margin-bottom: 0;
+    max-height: 200px; 
+    width: auto;
+}
+
+body > div > div[style*="display: flex"] > div {
+    flex: 1;
+}
+
+body > div > div[style*="text-align: center"] {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+td button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+td button:last-child {
+    margin-right: 0;
+}
+
+td[style*="color: red"] {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.home-buttons div {
+    padding: 20px;
+    text-align: center;
+}
+
+.home-buttons button {
+    margin: 10px;
+    min-width: 150px;
+}

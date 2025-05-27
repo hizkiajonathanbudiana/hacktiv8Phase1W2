@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body style="text-align: center;  margin: 0;">
+    <header style="background-color:lightblue;color:navy;">
+        <h1 style="margin: 0;">DIY Platform</h1>
+        <%- include('partials/nav') %>
+    </header>
+    <h1>Add New Post</h1>
+
+
+    <% if (errors) { %>
+        <% errors.forEach(el=> { %>
+            <div style="color: red;">
+                <%= el %>
+            </div>
+            <% }) %>
+                <% } %>
+
+                    <form action="/posts/add" method="post">
+
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title"> <br> <br>
+
+                        <div>
+                            <label for="author">User</label>
+                            <select name="author" id="author">
+                                <option value="" disabled selected>Choose..</option>
+                                <% authors.forEach(el=> { %>
+                                    <option value="<%= el.id %>">
+                                        <%= el.fullName %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+
+                            <label for="difficulty">Difficulty</label>
+                            <select name="difficulty" id="difficulty">
+                                <option value="" disabled selected>Choose..</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select> <br> <br>
+
+                        </div>
+
+                        <label for="estimatedTime">Estimated Time</label>
+                        <input type="number" name="estimatedTime" id="estimatedTime"> Minutes <br> <br>
+
+                        <label for="imageUrl">Image Url</label>
+                        <input type="text" name="imageUrl" id="imageUrl"><br> <br>
+
+                        <label for="createdAt">Created At</label>
+                        <input type="date" name="createdAt" id="createdAt"> <br> <br>
+
+                        <label for="description">Description</label> <br>
+                        <textarea name="description" id="description"></textarea> <br> <br>
+
+                        <button type="submit">Submit</button>
+                    </form>
+</body>
+
+</html>

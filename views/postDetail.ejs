@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+
+<body style="margin: 0; "> 
+    <header style="background-color:lightblue;color:navy; text-align: center;  margin: 0; align-content: center;">
+        <h1 style="margin: 0;">DIY Platform</h1>
+        <%- include('partials/nav') %>
+    </header>
+    <div> 
+        <h1 style="text-align: center;">
+            <%=post.title %>
+        </h1>
+
+        <div style="display: flex; justify-content: center; max-width: 900px; margin: 20px auto;"> 
+            <img src="<%= post.imageUrl %>"> 
+            <div style="padding-left: 10px; text-align: left;"> 
+                <p>Author: <%= post.authorName %>
+                </p>
+                <p>Difficulty: <%= post.difficulty %>
+                </p>
+                <p>Estimated Time: <%= post.estimatedTime + ' Minutes' %>
+                </p>
+                <p>Total Votes: <%= post.totalVote %>
+                </p>
+                <p>Created Date: <%= post.formatCreatedDate %>
+                </p>
+                <button><a href="/posts/<%=post.id %>/vote">Vote</a></button>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 30px auto; text-align: left; ">
+            <h2>Description:</h2>
+            <p style="white-space: pre-line; margin-top: 10px;"> 
+                <%= post.description %>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

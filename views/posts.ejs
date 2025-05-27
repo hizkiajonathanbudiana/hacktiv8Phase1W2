@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="text-align: center;  margin: 0; align-content: center;">
+    <header style="background-color:lightblue;color:navy;">
+        <h1 style="margin: 0;">DIY Platform</h1>
+        <%- include('partials/nav') %>
+    </header>
+
+    <button><a href="/posts/add">Add New Post</a></button>
+    <form action="/posts" method="get">
+        <input type="text" name="search" id="search" placeholder="Search by title">
+        <button type="submit">Search</button>
+    </form>
+    <div style="display: flex; justify-content: center;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Difficulty</th>
+                    <th>Total Votes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% posts.forEach(post=> { %>
+                    <tr>
+                        <td>
+                            <%= post.title %>
+                        </td>
+                        <td>
+                            <%= post.difficulty %>
+                        </td>
+                        <td>
+                            <%= post.totalVote %>
+                        </td>
+                        <td>
+                            <button><a href="/posts/<%= post.id %>">Read More</a></button>
+                            <button><a href="/posts/<%= post.id %>/edit">Edit</a></button>
+                            <button><a href="/posts/<%= post.id %>/delete">Delete</a></button>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

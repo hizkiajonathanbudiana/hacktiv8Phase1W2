@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "fullName": "Myra Adin",
+    "gender": "Female"
+  },
+  {
+    "id": 2,
+    "fullName": "David Nowlan",
+    "gender": "Male"
+  },
+  {
+    "id": 3,
+    "fullName": "Glad Pettit",
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "fullName": "Kristal Arents",
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "fullName": "Tom Hade",
+    "gender": "Male"
+  }
+]

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="text-align: center;  margin: 0; align-content: center;">
+    <header style="background-color:lightblue;color:navy;">
+        <h1 style="margin: 0;">DIY Platform</h1>
+        <%- include('partials/nav') %>
+    </header>
+    <h1>Edit Post#<%=post.id %></h1>
+
+     <% if (errors) { %>
+     <% errors.forEach(el => { %>
+        <div style="color: red;">
+            <%= el %>
+        </div>
+     <% }) %>
+    <% } %>
+
+    <form action="/posts/<%= post.id %>/edit" method="post">
+
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="<%= post.title %>"> <br> <br>
+
+        <div>
+            <label for="author">Author</label>
+            <select name="author" id="author"> 
+                <% authors.forEach(el=> { %>
+                    <option value="<%= el.id %>"<%= el.fullName === post.authorName ? 'selected' : '' %>>
+                        <%= el.fullName %>
+                    </option>
+                    <% }) %>
+            </select>
+
+            <label for="difficulty">Difficulty</label>
+            <select name="difficulty" id="difficulty">
+                <option value="Easy" <%= post.difficulty === 'Easy' ? 'selected' : '' %>>Easy</option>
+                <option value="Medium" <%= post.difficulty === 'Medium' ? 'selected' : '' %>>Medium</option>
+                <option value="Hard" <%= post.difficulty === 'Hard' ? 'selected' : '' %>>Hard</option>
+            </select> <br> <br>
+
+        </div>
+
+        <label for="estimatedTime">Estimated Time</label>
+        <input type="number" name="estimatedTime" id="estimatedTime" value ="<%= post.estimatedTime %>"> Minutes <br> <br>
+
+        <label for="imageUrl">Image Url</label>
+        <input type="text" name="imageUrl" id="imageUrl" value="<%= post.imageUrl %>""><br> <br>
+
+        <label for="createdAt">Created At</label>
+        <input type="date" name="createdAt" id="createdAt" value ="<%= post.createdDate.toISOString().split('T')[0] %>"><br> <br>
+
+        <label for="description">Description</label> <br>
+        <textarea name ="description" id="description"><%= post.description %></textarea> <br> <br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

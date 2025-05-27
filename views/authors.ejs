@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="text-align: center;  margin: 0; align-content: center;">
+    <header style="background-color:lightblue;color:navy;">
+        <h1 style="margin: 0;">DIY Platform</h1>
+        <%- include('partials/nav') %>
+    </header>
+    <button>
+        <a href="/authors/detail">Show Detail</a>
+    </button>
+
+
+
+    <% if (authors.length===0) { %>
+        <p style="text-align: center;">Belum ada author yang terdaftar.</p>
+        <% } else { %>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% authors.forEach(author=> { %>
+                            <tr>
+                                <td>
+                                    <%= author.id %>
+                                </td>
+                                <td>
+                                    <%= author.formatName %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <% } %>
+</body>
+
+</html>
